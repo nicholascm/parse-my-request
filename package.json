@@ -1,0 +1,14 @@
+{
+  "name": "rhp-microservice",
+  "version": "1.0.0",
+  "description": " Provides request header info",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "header"
+  ],
+  "author": "Nicholas Morrell",
+  "license": "ISC"
+}
