@@ -10,5 +10,8 @@
     "header"
   ],
   "author": "Nicholas Morrell",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
