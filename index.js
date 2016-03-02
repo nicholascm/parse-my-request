@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 app.get('/whoami', function(req, res) {
     res.json(
             {"ip-address": req.ip,
-            "language": req.headers["accept-language"], 
+            "language": parseLang(req.headers["accept-language"]), 
             "os": req.headers["user-agent"]
             }
         ); 
@@ -28,3 +28,7 @@ app.get('/request', function(req, res) {
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
+function parseLang(aString) {
+  return aString.split(',')[0]; 
+}
