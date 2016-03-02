@@ -7,7 +7,7 @@ var app = new express();
 app.set('port', (process.env.PORT || 5000));
 
 
-app.get('/', function(req, res) {
+app.get('/whoami', function(req, res) {
     res.json(
             {"ip-address": req.ip,
             "language": req.headers["accept-language"], 
