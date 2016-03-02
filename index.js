@@ -1,6 +1,7 @@
 //logic for parsing header here
 
 var express = require('express'); 
+var agentParse = require('user-agent-parse'); 
 
 var app = new express(); 
 
@@ -14,7 +15,8 @@ app.get('/whoami', function(req, res) {
     res.json(
             {"ip-address": req.ip,
             "language": parseLang(req.headers["accept-language"]), 
-            "os": req.headers["user-agent"]
+            "os": getOperatingSystem(req.headers["user-agent"]),
+            "device type": getDeviceType(req.headers["user-agent"])
             }
         ); 
 }); 
@@ -31,4 +33,12 @@ app.listen(app.get('port'), function() {
 
 function parseLang(aString) {
   return aString.split(',')[0]; 
+}
+
+function getOperatingSystem(aUserAgent) {
+  return agentParse.parse(aUserAgent).os; 
+}
+
+function getDeviceType(aUserAgent) {
+  return agentParse.parse(aUserAgent).device_type; 
 }

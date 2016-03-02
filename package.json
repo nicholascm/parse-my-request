@@ -15,6 +15,7 @@
   "author": "Nicholas Morrell",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "user-agent-parse": "^0.1.8"
   }
 }
