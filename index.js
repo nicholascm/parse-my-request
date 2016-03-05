@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 
 app.get('/whoami', function(req, res) {
     res.json(
-            {"ip-address": req.ip,
+            {"ip-address": req.headers["x-forwarded-for"],
             "language": parseLang(req.headers["accept-language"]), 
             "os": getOperatingSystem(req.headers["user-agent"]),
             "device type": getDeviceType(req.headers["user-agent"])
